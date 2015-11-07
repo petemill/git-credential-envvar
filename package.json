@@ -1,0 +1,29 @@
+{
+  "name": "git-credential-envvar",
+  "version": "1.0.0",
+  "description": "Enables git to use credentials provided by environment variables. Useful for single-use environments, e.g. containerised utilities.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "git-credential-envvar": "./cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/petemill/git-credentials-envvar.git"
+  },
+  "keywords": [
+    "git",
+    "credential"
+  ],
+  "author": "Pete Miller",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/petemill/git-credentials-envvar/issues"
+  },
+  "homepage": "https://github.com/petemill/git-credentials-envvar#readme",
+  "dependencies": {
+    "split": "^1.0.0"
+  }
+}
