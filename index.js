@@ -7,13 +7,18 @@ module.exports = function() {
   if (inCommand.toLowerCase() !== 'get') {
     process.exit();
   }
+  //get incoming stream, we need to receive the pipe from stdin rather than use readline since git streams it to us in a way that only this mechanism is compatible
   process.stdin.pipe(require('split')()).on('data', processLine);
+  //process the environment variables we require to provide the credentials as output
   let hardcodedUsername = process.env.GITCREDENTIALUSERNAME;
   let hardcodedPassword = process.env.GITCREDENTIALPASSWORD;
+  //validate and exit if we do not have what is required
   if (!hardcodedUsername || !hardcodedPassword) {
+    //let the user know. this message is bubbled up to the git command so the user will see it.
     console.error('Could not find required environment variable GITCREDENTIALUSERNAME and/or GITCREDENTIALPASSWORD');
     process.exit(1);
   }
+  //processes each incoming line of input
   function processLine (line) {
 
     //when line has content, it will be of the form key=value
