@@ -1,6 +1,6 @@
 {
   "name": "git-credential-envvar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Enables git to use credentials provided by environment variables. Useful for single-use environments, e.g. containerised utilities.",
   "main": "index.js",
   "scripts": {
