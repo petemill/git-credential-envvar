@@ -12,7 +12,7 @@ module.exports = function() {
   let hardcodedUsername = process.env.GITCREDENTIALUSERNAME;
   let hardcodedPassword = process.env.GITCREDENTIALPASSWORD;
   if (!hardcodedUsername || !hardcodedPassword) {
-    console.error('Could not find requried environment variable GITCREDENTIALUSERNAME and/or GITCREDENTIALPASSWORD');
+    console.error('Could not find required environment variable GITCREDENTIALUSERNAME and/or GITCREDENTIALPASSWORD');
     process.exit(1);
   }
 
