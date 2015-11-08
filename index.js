@@ -1,7 +1,14 @@
 "use strict";
 module.exports = function() {
 
-  process.stdin.pipe(require('split')()).on('data', processLine)
+  //we only support the 'get' command, not 'set' or 'erase'
+  //  for more explanation of these arguments, see: http://git-scm.com/book/en/v2/Git-Tools-Credential-Storage
+  let inCommand = process.argv[process.argv.length-1];
+  if (inCommand.toLowerCase() !== 'get') {
+    process.exit();
+  }
+
+  process.stdin.pipe(require('split')()).on('data', processLine);
   let hardcodedUsername = process.env.GITCREDENTIALUSERNAME;
   let hardcodedPassword = process.env.GITCREDENTIALPASSWORD;
   if (!hardcodedUsername || !hardcodedPassword) {
