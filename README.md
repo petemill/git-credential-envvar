@@ -9,7 +9,7 @@ Enables git to use credentials provided by environment variables. Useful for sin
  - NPM (for quick installation, otherwise clone the repo, mark ```cli.js``` as executable and symlink to somewhere in your ```$PATH```)
 
 #### Install the binary:
-```$> npm install -g git-credentials-envvar```
+```$> npm install -g git-credential-envvar```
 
 #### Set GIT to use the credential helper:
 ```$> git config --global credential.helper envvar```
