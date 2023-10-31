@@ -47,12 +47,14 @@ host=mygithost.com
 ```
 Press enter to leave a blank line, the credential-helper should then output:
 ```
-$> git credential fill
+$ git credential-store --file ~/git.store store (1)
 protocol=https
-host=mygithost.com
+host=mygithost
+username=bob
+password=s3cre7
+$ git credential-store --file ~/git.store get (2)
+protocol=https
+host=mygithost
 
-protocol=https
-host=mygithost.com
-username=myuser
-password=mypass
-```
+username=bob (3)
+password=s3cre7
